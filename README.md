@@ -4,9 +4,9 @@ capabilities.
 It allows you to make filtering, using comparison and matching:
 
 ```sh
-# your-programm delete-items --where "type=person & age > 40"
-# your-programm list-items --where "(weight >= 25.6 & weight < 30) | density < 0.01"
-# your-programm copy-items --where "!(weight >= 25.6 & weight < 30) | density < 0.01"
+$ your-programm delete-items --where "type=person & age > 40"
+$ your-programm list-items --where "(weight >= 25.6 & weight < 30) | density < 0.01"
+$ your-programm copy-items --where "!(weight >= 25.6 & weight < 30) | density < 0.01"
 ```
 
 This library is very basic, and relies on `bet` crate for logical expression
@@ -82,7 +82,7 @@ Then it is possible to use it like:
 
 Filter by name.
 ```bash
-# cargo run --example simple-filter-cli -- --where "\!(name=Jeff)" 
+$ cargo run --example simple-filter-cli -- --where "\!(name=Jeff)" 
 [
   {
     "name": "Mike",
@@ -112,8 +112,8 @@ Filter by name.
 ```
 
 Filter by age
-```bash
-# cargo run --example simple-filter-cli -- --where "age > 30"
+```sh
+$ cargo run --example simple-filter-cli -- --where "age > 30"
 [
   {
     "name": "Mike",
@@ -131,8 +131,8 @@ Filter by age
 ```
 
 Filter by age and weight
-```
-# cargo run --example simple-filter-cli -- --where "age < 20 & weight <47.999"
+```sh
+$ cargo run --example simple-filter-cli -- --where "age < 20 & weight <47.999"
 [
   {
     "name": "Moa",
@@ -144,8 +144,8 @@ Filter by age and weight
 ```
 
 Filter something strange
-```
-cargo run --example simple-filter-cli -- --where "(has-dogs=false | age = 35) & weight > 40"
+```sh
+$ cargo run --example simple-filter-cli -- --where "(has-dogs=false | age = 35) & weight > 40"
 [
   {
     "name": "Mike",
